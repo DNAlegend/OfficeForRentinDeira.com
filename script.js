@@ -5,6 +5,7 @@ if (burger && nav) {
   burger.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
     burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   });
   nav.querySelectorAll('.nav__links a, .nav__cta').forEach((a) =>
     a.addEventListener('click', () => {
@@ -20,7 +21,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Reveal-on-scroll
 const revealTargets = document.querySelectorAll(
-  '.card, .amen, .quote, .split__copy, .split__media, .split__map, .gallery__item, .section__head'
+  '.card, .amen, .quote, .split__copy, .split__media, .gallery__item, .section__head'
 );
 revealTargets.forEach((el) => el.classList.add('reveal'));
 
